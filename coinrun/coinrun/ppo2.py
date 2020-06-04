@@ -209,6 +209,7 @@ class Model(object):
                 initialize()
             
             global_variables = tf.get_collection(tf.GraphKeys.GLOBAL_VARIABLES, scope="")
+            sess.run(tf.global_variables_initializer())
             sync_from_root(sess, global_variables) #pylint: disable=E1101
         else:
             initialize()

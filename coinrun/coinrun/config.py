@@ -8,8 +8,8 @@ class ConfigSingle(object):
     keyword arguments.
     """
     def __init__(self):
-        self.WORKDIR = '/home/t-maigl/results-cr/saved_models'
-        self.TB_DIR = '/home/t-maigl/results-cr/tb_log'
+        self.WORKDIR = '/home/patmac/results-cr/saved_models'
+        self.TB_DIR = '/home/patmac/results-cr/tb_log'
         if not os.path.exists(self.WORKDIR):
             os.makedirs(self.WORKDIR, exist_ok=True)
 
@@ -80,6 +80,8 @@ class ConfigSingle(object):
         # One of {'nature', 'impala', 'impalalarge'}
         type_keys.append(('arch', 'architecture', str, 'impala', True))
 
+        type_keys.append(('env', 'environment', str, 'coinrun', True))
+        
         # Should the model include an LSTM
         type_keys.append(('lstm', 'use_lstm', int, 0, True))
 
