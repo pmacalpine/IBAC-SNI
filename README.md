@@ -112,7 +112,7 @@ RCALL_NUM_GPU=4 mpiexec -n 4 python3 -m coinrun.train_agent --env ${env} --run-i
 RCALL_NUM_GPU=4 mpiexec -n 4 python3 -m coinrun.train_agent --env ${env} --run-id ibac-sni-lambda1.0 --num-levels 200 --test --l2 0.0001 -uda 1 --beta-l2a 0.0001 --short
 RCALL_NUM_GPU=4 mpiexec -n 4 python3 -m coinrun.train_agent --env ${env} --run-id ibac --num-levels 200 --test --short --l2 0.0001 -uda 1 --beta 0.0001 --nr-samples 12
 RCALL_NUM_GPU=4 mpiexec -n 4 python3 -m coinrun.train_agent --env ${env} --run-id dropout0.2-sni-lambda0.5 --num-levels 200 --test --short --l2 0.0001 -uda 1 --dropout 0.2 --sni2
-RCALL_NUM_GPU=4 mpiexec -n 4 python3 -m coinrun.train_agent --env ${env} --run-id dropout0.2-sni-lambda1.0 --num-levels 200 --test --long --l2 0.0001 -uda 1 --dropout 0.2 --openai
+RCALL_NUM_GPU=4 mpiexec -n 4 python3 -m coinrun.train_agent --env ${env} --run-id dropout0.2-sni-lambda1.0 --num-levels 200 --test --short --l2 0.0001 -uda 1 --dropout 0.2 --openai
 RCALL_NUM_GPU=4 mpiexec -n 4 python3 -m coinrun.train_agent --env ${env} --run-id dropout0.2 --num-levels 200 --test --short --l2 0.0001 -uda 1 --dropout 0.2
 RCALL_NUM_GPU=4 mpiexec -n 4 python3 -m coinrun.train_agent --env ${env} --run-id batchnorm --num-levels 200 --test --short --l2 0.0001 -uda 1 -norm 1
 ```
