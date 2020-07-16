@@ -33,24 +33,24 @@ class ConfigSingle(object):
         # The runid whose parameters and settings you want to load.
         type_keys.append(('residd', 'restore_idd', str, None))
 
-        # Beta value for Info-loss KL divergence. -1 leaves this loss term out. 0 will probably diverge
+        # For IBAC, use SNI with lambda=0.5 
         bool_keys.append(('sni', 'sni', True))
 
-        # Beta value for Info-loss KL divergence. -1 leaves this loss term out. 0 will probably diverge
+        # For dropout, use SNI with lambda=0.5 
         bool_keys.append(('sni2', 'sni2', True))
 
         ### Others:
 
-        # Beta value for Info-loss KL divergence. -1 leaves this loss term out. 0 will probably diverge
+        # Long training for 200M time steps
         bool_keys.append(('long', 'long_training'))
 
-        # Beta value for Info-loss KL divergence. -1 leaves this loss term out. 0 will probably diverge
+        # Short training for 25M time steps
         bool_keys.append(('short', 'short_training'))
 
         # Beta value for Info-loss KL divergence. -1 leaves this loss term out. 0 will probably diverge
         type_keys.append(('b', 'beta', float, -1., True))
 
-        # Beta value for Info-loss KL divergence. -1 leaves this loss term out. 0 will probably diverge
+        # Number of samples for MC averages when computing the loss 
         type_keys.append(('nr-samples', 'nr_samples', int, 1, True))
 
         # Beta value for Info-loss L2 on Activations. -1 leaves this loss term out. 0 will probably diverge
@@ -122,7 +122,7 @@ class ConfigSingle(object):
         # What dropout probability to use
         type_keys.append(('dropout', 'dropout', float, 0.0, True))
 
-        # Use OPENAI version of dropout
+        # Use OPENAI version of dropout (SNI with lambda=1.0)
         bool_keys.append(('openai', 'openai', True))
 
         # # What dropout probability to use

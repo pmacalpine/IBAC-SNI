@@ -47,19 +47,15 @@ def main():
     if Config.LONG_TRAINING:
         total_timesteps = int(200e6)
     elif Config.SHORT_TRAINING:
-        total_timesteps = int(120e6)
+        #total_timesteps = int(120e6)
+        total_timesteps = int(25e6)
     save_interval = args.save_interval
 
-    total_timesteps = int(25e6)
     #env = utils.make_general_env(nenvs, seed=rank)
     #print (env)
 
     print (Config.ENVIRONMENT)
     
-    print ("Rank")
-    print (rank)
-    print ("num_levels")
-    print (Config.NUM_LEVELS)
     venv = ProcgenEnv(num_envs=nenvs, env_name=Config.ENVIRONMENT, num_levels=Config.NUM_LEVELS, paint_vel_info=Config.PAINT_VEL_INFO, distribution_mode="easy")
     #print (venv)
 
