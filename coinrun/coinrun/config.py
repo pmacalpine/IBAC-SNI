@@ -8,10 +8,13 @@ class ConfigSingle(object):
     keyword arguments.
     """
     def __init__(self):
-        self.WORKDIR = '/home/patmac/results-cr/saved_models'
-        self.TB_DIR = '/home/patmac/results-cr/tb_log'
+        self.WORKDIR = './results-procgen/saved_models'
+        self.TB_DIR = './results-procgen/tb_log'
         if not os.path.exists(self.WORKDIR):
             os.makedirs(self.WORKDIR, exist_ok=True)
+            
+        self.WORKDIR = os.path.abspath(self.WORKDIR)
+        self.TB_DIR = os.path.abspath(self.TB_DIR)
 
         self.LOG_ALL_MPI = True
         self.SYNC_FROM_ROOT = True
